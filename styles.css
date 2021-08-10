@@ -1,7 +1,11 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
+    font-family: 'poppins';
+}
+
+body {
+    background-color: #eeeeee;
 }
 
 .nav-bar{
@@ -38,23 +42,105 @@ nav ul li a{
     font-size: 20px;
 }
 
-.nav-bar .icons i{
+.nav-bar .icons a i{
     margin: 0 2px;
     padding: 5px;
+    color: #fff;
 }
 
 .nav-bar .icons i:hover{
-    background-color: #9e9e9e;
+    background-color: #424242;
     border-radius: 10px;
-    transition: 1s;
+    transition: 1.5s;
 }
 
 nav ul li a:hover{    
-    color: #9e9e9e;
+    color: #8571e5;
     transition: 0.5s;
 }
 
-section{
-    background-color: #212121;;
-    height: 350px;
+#personal-data{
+    background-color: #212121;
+    padding: 40px 0;
+    display: flex;
+    align-items: center;
+}
+
+#personal-data .avatar-img img{
+    width: 200px;
+    border-radius: 5px;
+}
+
+#personal-data .avatar-img{
+    width: 25%;
+    text-align: center;
+}
+
+#personal-data .my-info{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 75%;
+}
+
+#personal-data .my-info p{
+    color: white;
+    width: 100%;
+}
+
+#personal-data .my-info #apresentation{
+    font-weight: 600;
+}
+
+#personal-data .my-info h2{
+    color: white;
+    margin: 20px 0;
+    font-size: 45px;
+}
+
+#personal-data .my-info h2:hover{
+    color: #8571e5;
+    transition: 0.5s;
+}
+
+.skills-title{
+    text-align: center;
+    margin-top: 30px;
+}
+
+#personal-skills{
+    display: flex;
+    justify-content: space-around;
+}
+
+#personal-skills .skills-box{
+    background-color: white;
+    border-radius: 5px;
+    width: 30%;
+}
+
+#personal-skills .skills-title h2{
+    color: #212121;
+    font-size: 25px;
+}
+
+#personal-skills .skills-box img{
+    width: 50px;
+}
+
+#personal-skills .skills-box{
+    text-align: center;
+}
+
+#personal-skills .skills-box ul{
+    padding: 30px 30%;
+    list-style-type: none;
+}
+
+#personal-skills .skills-box ul li{
+    text-align: left;
+}
+
+#personal-skills .skills-box ul li i{
+    margin-right: 10px;
 }
