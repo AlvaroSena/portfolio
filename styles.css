@@ -108,6 +108,10 @@ nav ul li a:hover{
     margin-top: 30px;
 }
 
+.skills-title h2{
+    color: #212121;
+}
+
 #personal-skills{
     display: flex;
     justify-content: space-around;
@@ -139,8 +143,13 @@ nav ul li a:hover{
 
 #personal-skills .skills-box ul li{
     text-align: left;
+    color: #424242;
 }
 
 #personal-skills .skills-box ul li i{
     margin-right: 10px;
+}
+
+#personal-skills .skills-box ul li:hover{
+    color: black;
 }
