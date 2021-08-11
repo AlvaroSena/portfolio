@@ -5,7 +5,7 @@
 }
 
 body {
-    background-color: #eeeeee;
+    background-color: #f7f8f5;
 }
 
 .nav-bar{
@@ -108,7 +108,7 @@ nav ul li a:hover{
     margin-top: 30px;
 }
 
-.skills-title h2{
+.skills-title h1{
     color: #212121;
 }
 
@@ -152,4 +152,64 @@ nav ul li a:hover{
 
 #personal-skills .skills-box ul li:hover{
     color: black;
+}
+
+#projects{
+    background-color: white;
+    margin-top: 50px;
+}
+
+#projects .projects-title{
+    text-align: center;
+}
+
+#projects .projects-title h1{
+    color: #212121;
+}
+
+#projects .github-projects{
+    text-align: center;
+}
+
+#projects table{
+    width: 1000px;
+    /*border-spacing: 0px;*/
+}
+
+#projects th {
+    background-color: #000;
+    color: white;
+    text-align: left;
+}
+
+#projects table, th, td{
+    border-collapse: collapse;
+}
+
+#projects th, td{
+    padding: 5px;
+    border-collapse: collapse;
+} 
+
+#projects tr:nth-child(even) {
+    background-color: white;
+}
+
+#projects .center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#footer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-top: 120px;
+    width: 100%;
+    height: 100px;
+    background-color: #212121;
+}
+
+#footer .container{
+    align-items: center;
 }

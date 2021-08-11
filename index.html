@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/typeit@7.0.4/dist/typeit.min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="styles.css">
@@ -12,7 +14,7 @@
 </head>
 <body>
     <header>
-        <div class="nav-bar">
+        <div id="about" class="nav-bar">
             <div class="icons">
                 <a target="_blank" href="https://www.linkedin.com/in/alvaro-sena-dev/"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
                 <a target="_blank" href="https://www.github.com/alvarosena"><i class="fa fa-github-square" aria-hidden="true"></i></a>
@@ -21,9 +23,9 @@
             
             <nav>
                 <ul>
-                    <li><a href="#">ABOUT</a></li>
-                    <li><a href="#">PROJECTS</a></li>
-                    <li><a href="#">CONTACT</a></li>
+                    <li><a href="#about">ABOUT</a></li>
+                    <li><a href="#projects">PROJECTS</a></li>
+                    <li><a href="#footer">CONTACT</a></li>
                 </ul>
             </nav>
         </div>
@@ -41,7 +43,7 @@
         </div>
     </section>
     <div class="skills-title">
-        <h2>Skills overview</h2>
+        <h1>Skills overview</h1>
         <p>Throughout the past year, I've been self-learning how to programming 
             and improve my skills, <br>always is about learning and help other people.</p>
     </div>
@@ -82,8 +84,30 @@
                 </li>
             </ul>
         </div>
-
     </section>
+    <section id="projects">
+        <div class="projects-title">
+            <h1>My projects</h1>
+            <p>All this projects is avaliable on Github!</p>
+        </div>
+        <table id-="table-projects" class="center">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">URL</th>
+                    <th scope="col">Language</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </section>
+    <footer id="footer">
+        <div class="container">
+            <p>STAY CONNECTED</p>
+        </div>
+    </footer>
 </body>
 <script>
     new TypeIt("#apresentation", {
@@ -101,5 +125,38 @@
         document.getElementById("profile-img").src=data.avatar_url;
     }
     getMyInfo();
+
+    $.ajax({
+        url: "https://api.github.com/users/alvarosena/repos",
+        jsonp: true,
+        method: "GET",
+        dataType: "json",
+        success: function(res) {
+        console.log(res)
+        }
+    });
+
+    var request = new XMLHttpRequest();
+
+    request.open('GET', 'https://api.github.com/users/alvarosena/repos', true);
+
+    request.onload = function() {
+        var data = JSON.parse(this.response);
+
+        var statusHTML = '';
+
+        $.each(data, function(i, status){
+            statusHTML += '<tr>';
+            statusHTML += '<td>' + status.id + '</td>';
+            statusHTML += '<td>' + status.name + '</td>';
+            statusHTML += '<td>' + status.html_url + '</td>';
+            statusHTML += '<td>' + status.language + '</td>';
+            statusHTML += '</tr>';
+        });
+
+        $('tbody').html(statusHTML);
+    }
+    request.send();
+
 </script>
 </html>
