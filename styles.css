@@ -156,10 +156,11 @@ nav ul li a:hover{
 
 #projects{
     background-color: white;
-    margin-top: 50px;
+    margin-top: 100px;
 }
 
 #projects .projects-title{
+    margin: 70px;
     text-align: center;
 }
 
@@ -172,8 +173,7 @@ nav ul li a:hover{
 }
 
 #projects table{
-    width: 1000px;
-    /*border-spacing: 0px;*/
+    width: 100px;
 }
 
 #projects th {
@@ -184,6 +184,14 @@ nav ul li a:hover{
 
 #projects table, th, td{
     border-collapse: collapse;
+}
+
+#projects table, tbody tr td a{
+    color: black;
+}
+
+#projects table, tbody tr td a:hover{
+    color: #212121;
 }
 
 #projects th, td{
@@ -200,20 +208,14 @@ nav ul li a:hover{
     margin-right: auto;
 }
 
-#footer{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding-top: 120px;
-    width: 100%;
-    height: 100px;
+footer{
+    margin-top: 100px;
+    height: 300px;
     background-color: #212121;
 }
 
-#footer p{
+footer .footer-text p{
+    color: white;
     text-align: center;
-}
-
-footer .container p{
-    text-align: center;
+    font-size: 16px;
 }

@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/typeit@7.0.4/dist/typeit.min.js"></script>
-    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="styles.css">
@@ -45,7 +43,7 @@
     <div class="skills-title">
         <h1>Skills overview</h1>
         <p>Throughout the past year, I've been self-learning how to programming 
-            and improve my skills, <br>always is about learning and help other people.</p>
+            and improve my skills <br>and help other people.</p>
     </div>
     <section id="personal-skills">
         <div class="skills-box">
@@ -90,22 +88,21 @@
             <h1>My projects</h1>
             <p>All this projects is avaliable on Github!</p>
         </div>
-        <table id-="table-projects" class="center">
+        <table class="center">
             <thead>
                 <tr>
-                    <th scope="col">ID</th>
                     <th scope="col">Name</th>
                     <th scope="col">URL</th>
                     <th scope="col">Language</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody id="my-repository">
             </tbody>
         </table>
     </section>
-    <footer id="footer">
-        <div class="container">
-            <p>STAY CONNECTED</p>
+    <footer>
+        <div class="footer-text">
+            <p>CONTACT ME WITH</p>
         </div>
     </footer>
 </body>
@@ -120,43 +117,31 @@
         const response = await fetch('https://api.github.com/users/alvarosena');
         
         const data = await response.json();
-        console.log(data)
         document.getElementById("name").innerHTML=data.name;
         document.getElementById("profile-img").src=data.avatar_url;
     }
-    getMyInfo();
 
-    $.ajax({
-        url: "https://api.github.com/users/alvarosena/repos",
-        jsonp: true,
-        method: "GET",
-        dataType: "json",
-        success: function(res) {
-        console.log(res)
-        }
-    });
+    async function getMyRepositories() {
+        const responseRepostories = await fetch('https://api.github.com/users/alvarosena/repos');
 
-    var request = new XMLHttpRequest();
+        const dataRepostories = await responseRepostories.json();
+        
+        let contentBody = '';
+        dataRepostories.forEach(repository => {
+            contentBody += '<tr>';
+            contentBody += `<td> ${repository.name} </td>`;
+            contentBody += `<td> <a target="_blank" href=" ${repository.html_url}">  ${repository.html_url} </a></td>`;
+            console.log(repository)
+            contentBody += `<td> ${(repository.language || 'Not a language')} </td>`;
 
-    request.open('GET', 'https://api.github.com/users/alvarosena/repos', true);
+            contentBody += '</tr>';
+        })
 
-    request.onload = function() {
-        var data = JSON.parse(this.response);
-
-        var statusHTML = '';
-
-        $.each(data, function(i, status){
-            statusHTML += '<tr>';
-            statusHTML += '<td>' + status.id + '</td>';
-            statusHTML += '<td>' + status.name + '</td>';
-            statusHTML += '<td>' + status.html_url + '</td>';
-            statusHTML += '<td>' + status.language + '</td>';
-            statusHTML += '</tr>';
-        });
-
-        $('tbody').html(statusHTML);
+        document.getElementById("my-repository").innerHTML=contentBody;
     }
-    request.send();
+
+    getMyInfo();
+    getMyRepositories();
 
 </script>
 </html>
