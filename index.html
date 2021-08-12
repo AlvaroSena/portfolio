@@ -15,15 +15,15 @@
         <div id="about" class="nav-bar">
             <div class="icons">
                 <a target="_blank" href="https://www.linkedin.com/in/alvaro-sena-dev/"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+                <a target="_blank" href="https://www.instagram.com/alvarosen4"><i class="fa fa-instagram" aria-hidden="true"></i></a>    
                 <a target="_blank" href="https://www.github.com/alvarosena"><i class="fa fa-github-square" aria-hidden="true"></i></a>
-                <a target="_blank" href="https://www.instagram.com/alvarosen4"><i class="fa fa-instagram" aria-hidden="true"></i></a>         
             </div>
             
             <nav>
                 <ul>
                     <li><a href="#about">ABOUT</a></li>
                     <li><a href="#projects">PROJECTS</a></li>
-                    <li><a href="#footer">CONTACT</a></li>
+                    <li><a href="#contact">CONTACT</a></li>
                 </ul>
             </nav>
         </div>
@@ -35,7 +35,7 @@
         <div class="my-info">
             <p id="apresentation"></p>
             <h2 id="name"></h2>
-            <p>I'm an intusiastic of coding always is about to learning. Now I'm studing backend
+            <p>I'm an intusiastic of coding always is about learning. Now I'm studing backend
                 with Node.js
             </p>
         </div>
@@ -44,77 +44,84 @@
         <h1>Skills overview</h1>
         <p>Throughout the past year, I've been self-learning how to programming 
             and improve my skills <br>and help other people.</p>
-    </div>
-    <section id="personal-skills">
-        <div class="skills-box">
-            <img src="images/frontend.png" alt="frontend">
-            <h4>Frontend</h4>
-            <ul>
-                <li class="skill-tem">
-                    <i class="fa fa-check" aria-hidden="true"></i> 
-                    <span>HTML</span>
-                </li>
-                <li class="skill-tem">
-                    <i class="fa fa-check" aria-hidden="true"></i> 
-                    <span>CSS</span>
-                </li>
-                <li class="skill-tem">
-                    <i class="fa fa-check" aria-hidden="true"></i> 
-                    <span>Javascript</span>
-                </li>
-            </ul>
         </div>
-        <div class="skills-box">
-            <img src="images/database.png" alt="frontend">
-            <h4>Backend</h4>
-            <ul>
-                <li class="skill-tem">
-                    <i class="fa fa-check" aria-hidden="true"></i> 
-                    <span>Node.js</span>
-                </li>
-                <li class="skill-tem">
-                    <i class="fa fa-check" aria-hidden="true"></i> 
-                    <span>Python</span>
-                </li>
-                <li class="skill-tem">
-                    <i class="fa fa-check" aria-hidden="true"></i> 
-                    <span>PostgreSQL</span>
-                </li>
-            </ul>
-        </div>
-    </section>
-    <section id="projects">
-        <div class="projects-title">
-            <h1>My projects</h1>
-            <p>All this projects is avaliable on Github!</p>
-        </div>
-        <table class="center">
-            <thead>
-                <tr>
-                    <th scope="col">Name</th>
-                    <th scope="col">URL</th>
-                    <th scope="col">Language</th>
-                </tr>
-            </thead>
-            <tbody id="my-repository">
-            </tbody>
-        </table>
-    </section>
-    <footer>
-        <div class="footer-text">
-            <p>CONTACT ME WITH</p>
-        </div>
-    </footer>
-</body>
-<script>
-    new TypeIt("#apresentation", {
-        strings: "Hello, my name is",
-        speed: 100,
-        loop: false
-    }).go();
-
-    async function getMyInfo() {
-        const response = await fetch('https://api.github.com/users/alvarosena');
+        <section id="personal-skills">
+            <div class="skills-box">
+                <img src="images/frontend.png" alt="frontend">
+                <h4>Frontend</h4>
+                <ul>
+                    <li class="skill-tem">
+                        <i class="fa fa-check" aria-hidden="true"></i> 
+                        <span>HTML</span>
+                    </li>
+                    <li class="skill-tem">
+                        <i class="fa fa-check" aria-hidden="true"></i> 
+                        <span>CSS</span>
+                    </li>
+                    <li class="skill-tem">
+                        <i class="fa fa-check" aria-hidden="true"></i> 
+                        <span>Javascript</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="skills-box">
+                <img src="images/database.png" alt="frontend">
+                <h4>Backend</h4>
+                <ul>
+                    <li class="skill-tem">
+                        <i class="fa fa-check" aria-hidden="true"></i> 
+                        <span>Node.js</span>
+                    </li>
+                    <li class="skill-tem">
+                        <i class="fa fa-check" aria-hidden="true"></i> 
+                        <span>Python</span>
+                    </li>
+                    <li class="skill-tem">
+                        <i class="fa fa-check" aria-hidden="true"></i> 
+                        <span>PostgreSQL</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section id="projects">
+            <div class="projects-title">
+                <h1>My projects</h1>
+                <p>All this projects is avaliable on Github!</p>
+            </div>
+            <table class="center">
+                <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">URL</th>
+                        <th scope="col">Language</th>
+                    </tr>
+                </thead>
+                <tbody id="my-repository">
+                </tbody>
+            </table>
+        </section>
+        <footer id="contact">
+            <div class="footer-text">
+                <p>CONTACT ME WITH</p>
+            </div>
+            <div class="contact-links">
+                <a target="_blank" href="https://www.linkedin.com/in/alvaro-sena-dev/"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+                <a target="_blank" href="https://www.instagram.com/alvarosen4"><i class="fa fa-instagram" aria-hidden="true"></i></a>         
+            </div>
+            <div class="name-title">
+                <i class="fa fa-paper-plane" aria-hidden="true"></i> <span>alvarosenacs.c@gmail.com</span>
+            </div>
+        </footer>
+    </body>
+    <script>
+        new TypeIt("#apresentation", {
+            strings: "Hello, my name is",
+            speed: 100,
+            loop: false
+        }).go();
+        
+        async function getMyInfo() {
+            const response = await fetch('https://api.github.com/users/alvarosena');
         
         const data = await response.json();
         document.getElementById("name").innerHTML=data.name;

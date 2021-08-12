@@ -160,11 +160,12 @@ nav ul li a:hover{
 }
 
 #projects .projects-title{
-    margin: 70px;
+    margin: 50px;
     text-align: center;
 }
 
 #projects .projects-title h1{
+    padding-top: 30px;
     color: #212121;
 }
 
@@ -214,8 +215,39 @@ footer{
     background-color: #212121;
 }
 
+footer .footer-text{
+    padding-top: 30px;
+}
+
 footer .footer-text p{
     color: white;
     text-align: center;
     font-size: 16px;
+}
+
+footer .contact-links{
+    text-align: center;
+}
+
+footer .contact-links a{
+    color: white;
+}
+
+footer .contact-links i{
+    color: white;
+    font-size: 20px;
+    padding-top: 20px;
+}
+
+footer .name-title{
+    padding-top: 165px;
+    text-align: center;
+}
+
+footer .name-title i{
+    color: whitesmoke;
+}
+
+footer .name-title span{
+    color: whitesmoke;
 }
